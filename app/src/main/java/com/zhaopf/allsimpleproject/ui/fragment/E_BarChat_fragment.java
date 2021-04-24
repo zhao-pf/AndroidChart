@@ -7,16 +7,24 @@ import android.widget.LinearLayout;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 import com.zhaopf.allsimpleproject.BaseFragment;
 import com.zhaopf.allsimpleproject.InitApp;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -28,15 +36,7 @@ public class E_BarChat_fragment extends BaseFragment {
 
     @Override
     protected String setAbout() {
-        return "barChart.setDrawHoleEnabled(false); // 关闭中间洞\n" +
-                "barChart.setDrawEntryLabels(false); //关闭介绍文字\n" +
-                "barChart.setUsePercentValues(true); // 设置为百分比\n" +
-                "barData.setValueFormatter(new PercentFormatter());\n" +
-                "\n" +
-                "pieDataSet.setValueLinePart1OffsetPercentage(80f); // 设置横线和中心的距离\n" +
-                "pieDataSet.setValueLinePart1Length(0.5f); // 设置第一条横线的长短\n" +
-                "pieDataSet.setValueLinePart2Length(0.5f);\n" +
-                "pieDataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE); //设置值在外面";
+        return "";
     }
 
     @Override
@@ -49,6 +49,58 @@ public class E_BarChat_fragment extends BaseFragment {
     public BarChart createView() {
         BarChart barChart = new BarChart(InitApp.getContext());
         barChart.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,800));
+
+
+        ArrayList<BarEntry> barEntries = new ArrayList<>();
+        barEntries.add(new BarEntry(0,251.1f));
+        barEntries.add(new BarEntry(1,570.1f));
+        barEntries.add(new BarEntry(2,819.8f));
+        barEntries.add(new BarEntry(3,1157f));
+        barEntries.add(new BarEntry(4,1573f));
+
+
+
+        XAxis xAxis = barChart.getXAxis();
+        xAxis.setDrawLabels(true);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setDrawGridLines(false);
+        xAxis.setGranularityEnabled(true);
+        xAxis.setTextSize(18);
+
+        xAxis.setValueFormatter(new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                Log.e("value",value+"");
+                String[] strings = {"2018", "2019e", "2020e", "2021e", "2022e"};
+                return strings[(int) (value)];
+            }
+        });
+
+        YAxis axisLeft = barChart.getAxisLeft();
+        YAxis axisRight = barChart.getAxisRight();
+
+        axisLeft.setDrawGridLines(false); // 设置线
+        axisLeft.setDrawLabels(false); // 设置标签
+        axisLeft.setDrawAxisLine(false);  // 设置线
+
+        axisRight.setDrawGridLines(false); // 设置线
+        axisRight.setDrawLabels(false); // 设置标签
+        axisRight.setDrawAxisLine(false);  // 设置线
+
+        BarDataSet barDataSet = new BarDataSet(barEntries, "人工智能赋能实体经济所产生的市场规模（亿元）");
+        barDataSet.setColor(0xff70AD47);
+        barDataSet.setFormLineWidth(50);
+
+        BarData barData = new BarData(barDataSet);
+        barData.setValueTextSize(13);
+        barData.setBarWidth(0.6f);
+        barChart.setData(barData);
+
+        barChart.getDescription().setEnabled(false);
+
+        Legend legend = barChart.getLegend();
+        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+        legend.setTextSize(16);
 
         return barChart;
     }

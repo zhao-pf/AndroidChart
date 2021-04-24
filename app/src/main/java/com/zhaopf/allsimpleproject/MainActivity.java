@@ -19,6 +19,9 @@ import com.zhaopf.allsimpleproject.ui.fragment.C_ComBined_fragment;
 import com.zhaopf.allsimpleproject.ui.fragment.B_PieChat_fragment;
 import com.zhaopf.allsimpleproject.ui.fragment.D_PieChat_fragment;
 import com.zhaopf.allsimpleproject.ui.fragment.E_BarChat_fragment;
+import com.zhaopf.allsimpleproject.ui.fragment.F_PieChat_fragment;
+import com.zhaopf.allsimpleproject.ui.fragment.G_BarChat_fragment;
+import com.zhaopf.allsimpleproject.ui.fragment.H_LineChat_fragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements ItemMainAdapter.O
     }
 
     private void test() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.main, new E_BarChat_fragment(R.drawable.e)).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main, new H_LineChat_fragment(R.drawable.h)).commit();
         mMain.setVisibility(mMain.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
     }
 
@@ -59,6 +62,9 @@ public class MainActivity extends AppCompatActivity implements ItemMainAdapter.O
         adapter.addFragment(new ImageBean(new C_ComBined_fragment(R.drawable.c), "组合图表(折线柱形) ComBined"));
         adapter.addFragment(new ImageBean(new D_PieChat_fragment(R.drawable.d), "饼图3 PieChat"));
         adapter.addFragment(new ImageBean(new E_BarChat_fragment(R.drawable.e), "柱形图 BarChat"));
+        adapter.addFragment(new ImageBean(new F_PieChat_fragment(R.drawable.f), "饼图4 PieChat"));
+        adapter.addFragment(new ImageBean(new G_BarChat_fragment(R.drawable.g), "柱形图(横向排列) PieChat"));
+        adapter.addFragment(new ImageBean(new H_LineChat_fragment(R.drawable.h), "折线图 LineChat"));
     }
 
     private void initView() {

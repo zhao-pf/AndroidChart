@@ -48,16 +48,16 @@ public class B_PieChat_fragment extends BaseFragment {
 
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
 
-        pieEntries.add(new PieEntry(0.538f, "AI+安防"));
-        pieEntries.add(new PieEntry(0.036f, "AI+零售"));
-        pieEntries.add(new PieEntry(0.04f, "AI+客服"));
-        pieEntries.add(new PieEntry(0.042f, "AI+交通"));
-        pieEntries.add(new PieEntry(0.158f, "AI+金融"));
-        pieEntries.add(new PieEntry(0.004f, "AI+医疗"));
-        pieEntries.add(new PieEntry(0.024f, "AI+教育"));
-        pieEntries.add(new PieEntry(0.008f, "AI+农业"));
-        pieEntries.add(new PieEntry(0.116f, "AI+营销"));
-        pieEntries.add(new PieEntry(0.034f, "AI+制造"));
+        pieEntries.add(new PieEntry(53.8f, "AI+安防"));
+        pieEntries.add(new PieEntry(3.6f, "AI+零售"));
+        pieEntries.add(new PieEntry(4.f, "AI+客服"));
+        pieEntries.add(new PieEntry(4.2f, "AI+交通"));
+        pieEntries.add(new PieEntry(15.8f, "AI+金融"));
+        pieEntries.add(new PieEntry(0.4f, "AI+医疗"));
+        pieEntries.add(new PieEntry(2.4f, "AI+教育"));
+        pieEntries.add(new PieEntry(0.8f, "AI+农业"));
+        pieEntries.add(new PieEntry(11.6f, "AI+营销"));
+        pieEntries.add(new PieEntry(3.4f, "AI+制造"));
 
 
 

@@ -46,11 +46,11 @@ public class A_PieChat_fragment extends BaseFragment {
 
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
 
-        pieEntries.add(new PieEntry(0.1f, "汉族"));
-        pieEntries.add(new PieEntry(0.15f, "回族"));
-        pieEntries.add(new PieEntry(0.2f, "壮族"));
-        pieEntries.add(new PieEntry(0.25f, "维吾尔族"));
-        pieEntries.add(new PieEntry(0.3f, "土家族"));
+        pieEntries.add(new PieEntry(1f, "汉族"));
+        pieEntries.add(new PieEntry(1.5f, "回族"));
+        pieEntries.add(new PieEntry(2f, "壮族"));
+        pieEntries.add(new PieEntry(2.5f, "维吾尔族"));
+        pieEntries.add(new PieEntry(3f, "土家族"));
 
 
         PieDataSet pieDataSet = new PieDataSet(pieEntries, "");
