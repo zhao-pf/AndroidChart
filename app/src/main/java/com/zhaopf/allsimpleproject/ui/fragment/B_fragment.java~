@@ -1,0 +1,101 @@
+package com.zhaopf.allsimpleproject.ui.fragment;
+
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.github.mikephil.charting.charts.Chart;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
+import com.zhaopf.allsimpleproject.BaseFragment;
+import com.zhaopf.allsimpleproject.InitApp;
+
+import java.util.ArrayList;
+
+
+public class B_fragment extends BaseFragment implements CreateView {
+    public B_fragment(int imageRsc) {
+        super(imageRsc);
+    }
+
+    @Override
+    protected String setAbout() {
+
+        return "颜色数组: ColorTemplate.JOYFUL_COLORS\n" +
+                "设置值显示位置: setYValuePosition\n" +
+                "设置图例自动换行: setWordWrapEnabled\n";
+    }
+
+    @Override
+    protected void setView(LinearLayout main) {
+
+    }
+
+    @Override
+    public Chart createView() {
+        PieChart pieChart = new PieChart(InitApp.getContext());
+        pieChart.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 480));
+        ArrayList<PieEntry> entries = new ArrayList<>();
+        entries.add(new PieEntry(0.538f, "AI+安防"));
+        entries.add(new PieEntry(0.036f, "AI+零售"));
+        entries.add(new PieEntry(0.040f, "AI+客服"));
+        entries.add(new PieEntry(0.042f, "AI+交通"));
+        entries.add(new PieEntry(0.158f, "AI+金融"));
+        entries.add(new PieEntry(0.004f, "AI+医疗"));
+        entries.add(new PieEntry(0.024f, "AI+教育"));
+        entries.add(new PieEntry(0.008f, "AI+农业"));
+        entries.add(new PieEntry(0.116f, "AI+营销"));
+        entries.add(new PieEntry(0.034f, "AI+制造"));
+
+        PieDataSet pieDataSet = new PieDataSet(entries, "");
+        ArrayList<Integer> colors = new ArrayList<>();
+        colors.add(0xff74B44B);
+        colors.add(0xff4876CA);
+        colors.add(0xffFAC300);
+        colors.add(0xff466D2D);
+        colors.add(0xff29467F);
+        colors.add(0xffA1790B);
+        colors.add(0xff91C76E);
+        colors.add(0xff8BC564);
+        colors.add(0xff5E87CF);
+        colors.add(0xffFCD027);
+        colors.add(0xff609140);
+
+
+        pieDataSet.setColors(colors);
+        pieDataSet.setValueLinePart1OffsetPercentage(80f);
+        pieDataSet.setValueLinePart1Length(0.5f);
+        pieDataSet.setValueLinePart2Length(0.5f);
+
+
+        pieDataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+
+//        pieDataSet.setValueTextSize(12);
+
+        PieData pieData = new PieData(pieDataSet);
+        pieData.setValueFormatter(new PercentFormatter());
+        pieChart.setDrawHoleEnabled(false);
+        pieChart.setDrawEntryLabels(false);
+        pieChart.setData(pieData);
+
+//        pieChart.setCenterText("2018年中国人工智能赋能实体经济各产业份额");
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setUsePercentValues(true);
+        Legend legend = pieChart.getLegend();
+        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
+
+        pieChart.setExtraRightOffset(25);
+        pieChart.setExtraLeftOffset(25);
+        legend.setXEntrySpace(40);
+//        legend.setYOffset(100);
+        legend.setWordWrapEnabled(true);
+//        legend.setXEntrySpace(10f);
+
+        pieChart.invalidate();
+        return pieChart;
+    }
+}
