@@ -16,7 +16,7 @@ import com.zhaopf.allsimpleproject.InitApp;
 import java.util.ArrayList;
 
 
-public class A_PieChat_fragment extends BaseFragment implements CreateView {
+public class A_PieChat_fragment extends BaseFragment {
 
     public A_PieChat_fragment(int imageRsc) {
         super(imageRsc);

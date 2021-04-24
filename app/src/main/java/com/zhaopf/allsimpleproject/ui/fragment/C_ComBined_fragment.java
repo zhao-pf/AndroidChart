@@ -25,7 +25,7 @@ import com.zhaopf.allsimpleproject.InitApp;
 import java.util.ArrayList;
 
 
-public class C_ComBined_fragment extends BaseFragment implements CreateView {
+public class C_ComBined_fragment extends BaseFragment {
 
     public C_ComBined_fragment(int imageRsc) {
         super(imageRsc);

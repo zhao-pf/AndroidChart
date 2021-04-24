@@ -19,7 +19,7 @@ import com.zhaopf.allsimpleproject.InitApp;
 import java.util.ArrayList;
 
 
-public class D_PieChat_fragment extends BaseFragment implements CreateView {
+public class D_PieChat_fragment extends BaseFragment {
 
     public D_PieChat_fragment(int imageRsc) {
         super(imageRsc);
@@ -27,15 +27,17 @@ public class D_PieChat_fragment extends BaseFragment implements CreateView {
 
     @Override
     protected String setAbout() {
-        return "barChart.setDrawHoleEnabled(false); // 关闭中间洞\n" +
-                "barChart.setDrawEntryLabels(false); //关闭介绍文字\n" +
-                "barChart.setUsePercentValues(true); // 设置为百分比\n" +
-                "barData.setValueFormatter(new PercentFormatter());\n" +
-                "\n" +
-                "pieDataSet.setValueLinePart1OffsetPercentage(80f); // 设置横线和中心的距离\n" +
-                "pieDataSet.setValueLinePart1Length(0.5f); // 设置第一条横线的长短\n" +
-                "pieDataSet.setValueLinePart2Length(0.5f);\n" +
-                "pieDataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE); //设置值在外面";
+        return "pieDataSet.setValueFormatter(new IValueFormatter() {\n" +
+                "    int i = 0;\n" +
+                "    @Override\n" +
+                "    public String getFormattedValue(float value, Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler) {\n" +
+                "        Log.e(\"dataSetIndex\", value + \"\");\n" +
+                "        Log.e(\"dataSetIndex\", entry.toString() + \"\");\n" +
+                "        String[] strings = {\"视觉\", \"语音\", \"自然语言\", \"硬件\", \"算法\"};\n" +
+                "        if (i == strings.length) i = 0;\n" +
+                "        return strings[i++] + \",\\n\" + (value * 100) + \"%\";\n" +
+                "    }\n" +
+                "});";
     }
 
     @Override
@@ -47,7 +49,7 @@ public class D_PieChat_fragment extends BaseFragment implements CreateView {
     @Override
     public PieChart createView() {
         PieChart barChart = new PieChart(InitApp.getContext());
-        barChart.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 700));
+        barChart.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 600));
 
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
 
@@ -59,7 +61,6 @@ public class D_PieChat_fragment extends BaseFragment implements CreateView {
 
 
         PieDataSet pieDataSet = new PieDataSet(pieEntries, "");
-
 
         ArrayList<Integer> colors = new ArrayList<>();
 
@@ -80,14 +81,18 @@ public class D_PieChat_fragment extends BaseFragment implements CreateView {
         pieDataSet.setValueLinePart1Length(0.5f); // 设置第一条横线的长短
         pieDataSet.setValueLinePart2Length(0.5f);
         pieDataSet.setSliceSpace(2);
-        pieDataSet.setValueTextSize(15);
+        pieDataSet.setValueTextSize(10);
         PieData barData = new PieData(pieDataSet);
+
         pieDataSet.setValueFormatter(new IValueFormatter() {
+            int i = 0;
             @Override
             public String getFormattedValue(float value, Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler) {
-                Log.e("dataSetIndex",dataSetIndex+"");
+                Log.e("dataSetIndex", value + "");
+                Log.e("dataSetIndex", entry.toString() + "");
                 String[] strings = {"视觉", "语音", "自然语言", "硬件", "算法"};
-                return strings[dataSetIndex]+",\n" + (value * 100) + "%";
+                if (i == strings.length) i = 0;
+                return strings[i++] + ",\n" + (value * 100) + "%";
             }
         });
 

@@ -16,7 +16,7 @@ import com.zhaopf.allsimpleproject.InitApp;
 import java.util.ArrayList;
 
 
-public class B_PieChat_fragment extends BaseFragment implements CreateView {
+public class B_PieChat_fragment extends BaseFragment {
 
     public B_PieChat_fragment(int imageRsc) {
         super(imageRsc);
@@ -44,7 +44,7 @@ public class B_PieChat_fragment extends BaseFragment implements CreateView {
     @Override
     public PieChart createView() {
         PieChart barChart = new PieChart(InitApp.getContext());
-        barChart.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 550));
+        barChart.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 700));
 
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
 
