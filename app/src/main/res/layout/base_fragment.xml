@@ -43,12 +43,13 @@
                         android:gravity="center"
                         app:srcCompat="@drawable/a" />
                     <TextView
+                        android:textSize="12dp"
                         android:id="@+id/tv_about"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:padding="12dp"
+                        android:padding="4dp"
                         android:scaleType="fitStart"
                         android:text="关于图表"
                         app:srcCompat="@drawable/a" />

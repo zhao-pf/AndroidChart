@@ -2,7 +2,9 @@ package com.zhaopf.allsimpleproject.ui.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Paint;
 import android.os.Build;
+import android.util.TypedValue;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,5 +29,7 @@ public class CustomTextView extends TextView {
         setPadding(10,10,10,10);
         setGravity(TEXT_ALIGNMENT_CENTER);
         setText(content);
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,100f,getResources().getDisplayMetrics());
     }
 }

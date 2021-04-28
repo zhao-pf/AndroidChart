@@ -1,10 +1,14 @@
 package com.zhaopf.allsimpleproject.ui.fragment;
 
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Typeface;
+import android.text.BoringLayout;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
@@ -14,6 +18,8 @@ import com.zhaopf.allsimpleproject.BaseFragment;
 import com.zhaopf.allsimpleproject.InitApp;
 
 import java.util.ArrayList;
+
+import javax.crypto.spec.DESedeKeySpec;
 
 
 public class B_PieChat_fragment extends BaseFragment {
@@ -44,7 +50,7 @@ public class B_PieChat_fragment extends BaseFragment {
     @Override
     public PieChart createView() {
         PieChart barChart = new PieChart(InitApp.getContext());
-        barChart.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 700));
+        barChart.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 550));
 
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
 
@@ -91,7 +97,7 @@ public class B_PieChat_fragment extends BaseFragment {
         PieData barData = new PieData(pieDataSet);
         barData.setValueFormatter(new PercentFormatter());
 
-        barChart.getDescription().setEnabled(false); // 设置右下角介绍关闭
+//        barChart.getDescription().setEnabled(false); // 设置右下角介绍关闭
         barChart.setDrawHoleEnabled(false); // 关闭中间洞
         barChart.setDrawEntryLabels(false); //关闭介绍文字
 
@@ -102,9 +108,16 @@ public class B_PieChat_fragment extends BaseFragment {
         legend.setWordWrapEnabled(true); // 设置图例自动换行
 //        legend.setXEntrySpace(50);
 
+        Description description = barChart.getDescription();
+        description.setText("2018年中国人工智能赋能试题经纪各产业份额");
+        description.setTextAlign(Paint.Align.CENTER);
+        description.setTextSize(18);
+        description.setPosition(getActivity().getResources().getDisplayMetrics().widthPixels/2,40);
+        description.setTypeface(Typeface.DEFAULT_BOLD);
+
 
         barChart.setData(barData);
-
+        barChart.setExtraTopOffset(20);
         return barChart;
     }
 

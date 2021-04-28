@@ -38,7 +38,6 @@ abstract public class BaseFragment extends Fragment {
         TextView tvAbout = view.findViewById(R.id.tv_about);
 
         ivMain.setImageResource(imageRsc);
-        setView(llMain);
 
         Chart view1 = createView();
         view.invalidate();
@@ -46,6 +45,7 @@ abstract public class BaseFragment extends Fragment {
         if (setAbout()!=null){
             tvAbout.setText(setAbout());
         }
+        setView(llMain);
         return view;
     }
 

@@ -1,13 +1,20 @@
 package com.zhaopf.allsimpleproject.ui.fragment;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Typeface;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -96,12 +103,20 @@ public class E_BarChat_fragment extends BaseFragment {
         barData.setBarWidth(0.6f);
         barChart.setData(barData);
 
-        barChart.getDescription().setEnabled(false);
 
         Legend legend = barChart.getLegend();
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
-        legend.setTextSize(16);
+        legend.setTextSize(12);
+        Description description = barChart.getDescription();
 
+        Resources resources = getActivity().getResources();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        description.setTypeface(Typeface.DEFAULT_BOLD);
+        description.setPosition(displayMetrics.widthPixels/2,60);
+        description.setText("2018-2022年中国人工智能赋能试题经纪市场规模");
+        description.setTextAlign(Paint.Align.CENTER);
+        description.setTextSize(16);
+        barChart.setExtraTopOffset(50);
         return barChart;
     }
 

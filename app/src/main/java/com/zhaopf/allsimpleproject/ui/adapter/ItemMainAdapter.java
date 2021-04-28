@@ -6,13 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.zhaopf.allsimpleproject.BaseFragment;
 import com.zhaopf.allsimpleproject.R;
 import com.zhaopf.allsimpleproject.bean.ImageBean;
 
@@ -51,8 +50,8 @@ public class ItemMainAdapter extends RecyclerView.Adapter<ItemMainAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.tvName.setText(items.get(position).getName());
-        BaseFragment fragment = items.get(position).getFragment();
-        holder.iv_ll.addView(fragment.createView());
+//        BaseFragment fragment = items.get(position).getFragment();
+//        holder.iv_ll.addView(fragment.createView());
         listener.onChangeFragment(items.get(position), holder.ivImg,holder.clMain);
     }
 
@@ -71,7 +70,7 @@ public class ItemMainAdapter extends RecyclerView.Adapter<ItemMainAdapter.ViewHo
     }
 
     public interface OnClickChangeFragmentListener {
-        void onChangeFragment(ImageBean bean, ImageView imageView, ConstraintLayout clMain);
+        void onChangeFragment(ImageBean bean, ImageView imageView, RelativeLayout clMain);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
@@ -80,7 +79,7 @@ public class ItemMainAdapter extends RecyclerView.Adapter<ItemMainAdapter.ViewHo
         @BindView(R.id.tv_name)
         TextView tvName;
         @BindView(R.id.cl_main)
-        ConstraintLayout clMain;
+        RelativeLayout clMain;
         @BindView(R.id.iv_ll)
         LinearLayout iv_ll;
 
