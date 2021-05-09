@@ -59,7 +59,7 @@ captures/
 .externalNativeBuild
 .cxx/
 
-# Google Services (e.g. APIs or Firebase)
+# Google Services (chart_e.chart_g. APIs or Firebase)
 # google-services.json
 
 # Freeline

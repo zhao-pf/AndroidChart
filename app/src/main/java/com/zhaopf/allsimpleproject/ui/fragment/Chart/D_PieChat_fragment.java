@@ -1,4 +1,4 @@
-package com.zhaopf.allsimpleproject.ui.fragment;
+package com.zhaopf.allsimpleproject.ui.fragment.Chart;
 
 import android.graphics.Color;
 import android.util.Log;
@@ -28,14 +28,14 @@ public class D_PieChat_fragment extends BaseFragment {
     @Override
     protected String setAbout() {
         return "pieDataSet.setValueFormatter(new IValueFormatter() {\n" +
-                "    int i = 0;\n" +
+                "    int chart_i = 0;\n" +
                 "    @Override\n" +
                 "    public String getFormattedValue(float value, Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler) {\n" +
-                "        Log.e(\"dataSetIndex\", value + \"\");\n" +
-                "        Log.e(\"dataSetIndex\", entry.toString() + \"\");\n" +
+                "        Log.chart_e(\"dataSetIndex\", value + \"\");\n" +
+                "        Log.chart_e(\"dataSetIndex\", entry.toString() + \"\");\n" +
                 "        String[] strings = {\"视觉\", \"语音\", \"自然语言\", \"硬件\", \"算法\"};\n" +
-                "        if (i == strings.length) i = 0;\n" +
-                "        return strings[i++] + \",\\n\" + (value * 100) + \"%\";\n" +
+                "        if (chart_i == strings.length) chart_i = 0;\n" +
+                "        return strings[chart_i++] + \",\\n\" + (value * 100) + \"%\";\n" +
                 "    }\n" +
                 "});";
     }

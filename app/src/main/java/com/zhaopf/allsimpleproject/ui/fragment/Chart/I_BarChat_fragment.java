@@ -1,9 +1,8 @@
-package com.zhaopf.allsimpleproject.ui.fragment;
+package com.zhaopf.allsimpleproject.ui.fragment.Chart;
 
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -16,7 +15,7 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.zhaopf.allsimpleproject.BaseFragment;
 import com.zhaopf.allsimpleproject.InitApp;
 import com.zhaopf.allsimpleproject.R;
-import com.zhaopf.allsimpleproject.ui.fragment.makerview.CustomMakerView;
+import com.zhaopf.allsimpleproject.ui.fragment.Chart.makerview.CustomMakerView;
 
 import java.util.ArrayList;
 import java.util.Random;

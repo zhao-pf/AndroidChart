@@ -1,4 +1,4 @@
-package com.zhaopf.allsimpleproject.ui.fragment;
+package com.zhaopf.allsimpleproject.ui.fragment.Chart;
 
 import android.graphics.Color;
 import android.graphics.Paint;

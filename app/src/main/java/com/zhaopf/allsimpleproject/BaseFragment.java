@@ -29,7 +29,7 @@ abstract public class BaseFragment extends Fragment {
         return imageRsc;
     }
 
-    public abstract Chart createView();
+    public abstract View createView();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.base_fragment, container, false);
@@ -39,7 +39,7 @@ abstract public class BaseFragment extends Fragment {
 
         ivMain.setImageResource(imageRsc);
 
-        Chart view1 = createView();
+        View view1 = createView();
         view.invalidate();
         llMain.addView(view1);
         if (setAbout()!=null){

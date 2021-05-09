@@ -1,4 +1,4 @@
-package com.zhaopf.allsimpleproject.ui.fragment.makerview;
+package com.zhaopf.allsimpleproject.ui.fragment.Chart.makerview;
 
 import android.content.Context;
 import android.widget.TextView;
@@ -22,7 +22,7 @@ public class CustomMakerView extends MarkerView {
     private MPPointF mMpPointF;
 
     /**
-     * Constructor. Sets up the MarkerView with a custom layout resource.
+     * Constructor. Sets up the MarkerView with chart_a custom layout resource.
      *
      * @param context
      * @param layoutResource the layout resource to use for the MarkerView
