@@ -1,8 +1,6 @@
 package com.zhaopf.allsimpleproject.bean;
 
-import androidx.fragment.app.Fragment;
-
-import com.zhaopf.allsimpleproject.BaseFragment;
+import com.zhaopf.allsimpleproject.base.BaseFragment;
 
 /**
  * @创建者 赵鹏飞

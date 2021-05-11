@@ -1,18 +1,14 @@
 package com.zhaopf.allsimpleproject.ui.fragment.Chart;
 
-import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
@@ -21,20 +17,18 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
-import com.github.mikephil.charting.formatter.IValueFormatter;
-import com.github.mikephil.charting.utils.ViewPortHandler;
-import com.zhaopf.allsimpleproject.BaseFragment;
+import com.zhaopf.allsimpleproject.base.BaseFragment;
 import com.zhaopf.allsimpleproject.InitApp;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-
+/**
+ * @创建者 赵鹏飞
+ * @文件介绍 TODO
+ * @创建日期 2021/4/28 16:56
+ * @Github https://github.com/zhao-pf
+ */
 public class E_BarChat_fragment extends BaseFragment {
 
     public E_BarChat_fragment(int imageRsc) {

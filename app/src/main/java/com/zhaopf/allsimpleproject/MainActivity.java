@@ -27,7 +27,9 @@ import com.zhaopf.allsimpleproject.ui.fragment.Chart.F_PieChat_fragment;
 import com.zhaopf.allsimpleproject.ui.fragment.Chart.G_BarChat_fragment;
 import com.zhaopf.allsimpleproject.ui.fragment.Chart.H_LineChat_fragment;
 import com.zhaopf.allsimpleproject.ui.fragment.Chart.I_BarChat_fragment;
-import com.zhaopf.allsimpleproject.ui.fragment.MyView.A_TestView_fragment;
+import com.zhaopf.allsimpleproject.ui.fragment.MyView.A_Circle_fragment;
+import com.zhaopf.allsimpleproject.ui.fragment.MyView.B_Girl_fragment;
+import com.zhaopf.allsimpleproject.ui.fragment.MyView.C_Speed_fragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements ItemMainAdapter.O
     }
 
     private void test() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.main, new A_TestView_fragment(R.drawable.view_a)).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main, new C_Speed_fragment(R.drawable.view_c)).commit();
         mMain.setVisibility(mMain.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
     }
 
@@ -81,7 +83,9 @@ public class MainActivity extends AppCompatActivity implements ItemMainAdapter.O
     }
 
     private void addViewData() {
-        mAdapter.addFragment(new ImageBean(new A_TestView_fragment(R.drawable.view_a), "自定义View"));
+        mAdapter.addFragment(new ImageBean(new A_Circle_fragment(R.drawable.view_a), "熟悉"));
+        mAdapter.addFragment(new ImageBean(new B_Girl_fragment(R.drawable.view_b), "小女孩(填充规则)"));
+        mAdapter.addFragment(new ImageBean(new C_Speed_fragment(R.drawable.view_c), "速度表"));
     }
 
     private void addChartData() {

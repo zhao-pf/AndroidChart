@@ -1,4 +1,4 @@
-package com.zhaopf.allsimpleproject;
+package com.zhaopf.allsimpleproject.base;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.github.mikephil.charting.charts.Chart;
+import com.zhaopf.allsimpleproject.R;
 
 /**
  * @创建者 赵鹏飞

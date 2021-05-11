@@ -12,7 +12,7 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.zhaopf.allsimpleproject.BaseFragment;
+import com.zhaopf.allsimpleproject.base.BaseFragment;
 import com.zhaopf.allsimpleproject.InitApp;
 import com.zhaopf.allsimpleproject.R;
 import com.zhaopf.allsimpleproject.ui.fragment.Chart.makerview.CustomMakerView;
@@ -20,7 +20,12 @@ import com.zhaopf.allsimpleproject.ui.fragment.Chart.makerview.CustomMakerView;
 import java.util.ArrayList;
 import java.util.Random;
 
-
+/**
+ * @创建者 赵鹏飞
+ * @文件介绍 TODO
+ * @创建日期 2021/4/28 16:56
+ * @Github https://github.com/zhao-pf
+ */
 public class I_BarChat_fragment extends BaseFragment {
 
 
